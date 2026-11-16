@@ -1,0 +1,134 @@
+{
+  "model_name": "phishing_model",
+  "task": "three-class email classification",
+  "trained_at": "2026-10-30T10:19:08.925191+00:00",
+  "dataset": {
+    "path": "E:\\projects\\PhishGuard\\phishguard\\backend\\ml\\dataset\\three_class_emails_final.csv",
+    "rows": 9469,
+    "duplicate_rows_removed": 0,
+    "class_distribution": {
+      "Legitimate": 3863,
+      "Spam": 1793,
+      "Phishing": 3813
+    },
+    "label_mapping": {
+      "0": "Legitimate",
+      "1": "Spam",
+      "2": "Phishing"
+    },
+    "manual_review": {
+      "reviewed_records": 148,
+      "excluded_records": 4,
+      "review_source": "quality_review.csv"
+    }
+  },
+  "split": {
+    "test_size": 0.25,
+    "random_state": 42,
+    "train_rows": 7101,
+    "test_rows": 2368,
+    "strategy": "stratified random split"
+  },
+  "features": {
+    "type": "TF-IDF",
+    "ngram_range": [
+      1,
+      2
+    ],
+    "max_features": 10000,
+    "stop_words": "english",
+    "sublinear_tf": true
+  },
+  "model": {
+    "type": "LogisticRegression",
+    "parameters": {
+      "max_iter": 1000,
+      "class_weight": "balanced"
+    }
+  },
+  "metrics": {
+    "accuracy": 0.9818,
+    "macro_precision": 0.9769,
+    "macro_recall": 0.9779,
+    "macro_f1": 0.9774,
+    "weighted_f1": 0.9819,
+    "roc_auc_ovr_macro": 0.9992
+  },
+  "per_class_metrics": {
+    "Legitimate": {
+      "precision": 0.9826,
+      "recall": 0.9938,
+      "f1_score": 0.9882,
+      "support": 966
+    },
+    "Spam": {
+      "precision": 0.9534,
+      "recall": 0.9598,
+      "f1_score": 0.9566,
+      "support": 448
+    },
+    "Phishing": {
+      "precision": 0.9947,
+      "recall": 0.9801,
+      "f1_score": 0.9873,
+      "support": 954
+    }
+  },
+  "classification_report": {
+    "Legitimate": {
+      "precision": 0.9825997952917093,
+      "recall": 0.9937888198757764,
+      "f1-score": 0.9881626351003603,
+      "support": 966.0
+    },
+    "Spam": {
+      "precision": 0.9534368070953437,
+      "recall": 0.9598214285714286,
+      "f1-score": 0.9566184649610678,
+      "support": 448.0
+    },
+    "Phishing": {
+      "precision": 0.9946808510638298,
+      "recall": 0.980083857442348,
+      "f1-score": 0.9873284054910243,
+      "support": 954.0
+    },
+    "accuracy": 0.9818412162162162,
+    "macro avg": {
+      "precision": 0.9769058178169608,
+      "recall": 0.9778980352965178,
+      "f1-score": 0.9773698351841508,
+      "support": 2368.0
+    },
+    "weighted avg": {
+      "precision": 0.9819495877303203,
+      "recall": 0.9818412162162162,
+      "f1-score": 0.9818587316925437,
+      "support": 2368.0
+    }
+  },
+  "confusion_matrix": {
+    "labels": [
+      "Legitimate",
+      "Spam",
+      "Phishing"
+    ],
+    "matrix": [
+      [
+        960,
+        5,
+        1
+      ],
+      [
+        14,
+        430,
+        4
+      ],
+      [
+        3,
+        16,
+        935
+      ]
+    ]
+  }
+}

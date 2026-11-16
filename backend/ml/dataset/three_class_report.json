@@ -1,0 +1,21 @@
+{
+    "raw_records": 10320,
+    "usable_unique_records": 9522,
+    "duplicates_removed": 798,
+    "conflicting_records_excluded": 0,
+    "class_distribution": {
+        "Legitimate": 3863,
+        "Phishing": 3841,
+        "Spam": 1818
+    },
+    "sources": {
+        "SpamAssassin/20030228_easy_ham": 2473,
+        "Nazario/phishing3.mbox": 1950,
+        "SpamAssassin/20030228_easy_ham_2": 1390,
+        "SpamAssassin/20050311_spam_2": 1334,
+        "Nazario/phishing2.mbox": 1165,
+        "SpamAssassin/20030228_spam": 484,
+        "Nazario/phishing1.mbox": 382,
+        "Nazario/phishing0.mbox": 344
+    }
+}

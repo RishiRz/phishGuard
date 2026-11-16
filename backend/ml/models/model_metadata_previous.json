@@ -1,0 +1,108 @@
+{
+  "model_name": "phishing_model",
+  "task": "three-class email classification",
+  "trained_at": "2026-10-30T09:37:34.731889+00:00",
+  "dataset": {
+    "path": "E:\\projects\\PhishGuard\\phishguard\\backend\\ml\\dataset\\three_class_emails.csv",
+    "rows": 144,
+    "class_distribution": {
+      "Legitimate": 50,
+      "Spam": 49,
+      "Phishing": 45
+    },
+    "label_mapping": {
+      "0": "Legitimate",
+      "1": "Spam",
+      "2": "Phishing"
+    }
+  },
+  "split": {
+    "test_size": 0.25,
+    "random_state": 42,
+    "train_rows": 108,
+    "test_rows": 36,
+    "strategy": "stratified random split"
+  },
+  "features": {
+    "type": "TF-IDF",
+    "ngram_range": [
+      1,
+      2
+    ],
+    "max_features": 10000,
+    "stop_words": "english",
+    "sublinear_tf": true
+  },
+  "model": {
+    "type": "LogisticRegression",
+    "parameters": {
+      "max_iter": 1000,
+      "class_weight": "balanced"
+    }
+  },
+  "metrics": {
+    "accuracy": 0.9167,
+    "macro_precision": 0.9154,
+    "macro_recall": 0.9116,
+    "macro_f1": 0.9124,
+    "weighted_f1": 0.9163,
+    "roc_auc_ovr_macro": 0.9777
+  },
+  "classification_report": {
+    "Legitimate": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1-score": 1.0,
+      "support": 13.0
+    },
+    "Spam": {
+      "precision": 0.8461538461538461,
+      "recall": 0.9166666666666666,
+      "f1-score": 0.88,
+      "support": 12.0
+    },
+    "Phishing": {
+      "precision": 0.9,
+      "recall": 0.8181818181818182,
+      "f1-score": 0.8571428571428571,
+      "support": 11.0
+    },
+    "accuracy": 0.9166666666666666,
+    "macro avg": {
+      "precision": 0.9153846153846154,
+      "recall": 0.9116161616161617,
+      "f1-score": 0.9123809523809524,
+      "support": 36.0
+    },
+    "weighted avg": {
+      "precision": 0.9181623931623931,
+      "recall": 0.9166666666666666,
+      "f1-score": 0.9163492063492065,
+      "support": 36.0
+    }
+  },
+  "confusion_matrix": {
+    "labels": [
+      "Legitimate",
+      "Spam",
+      "Phishing"
+    ],
+    "matrix": [
+      [
+        13,
+        0,
+        0
+      ],
+      [
+        0,
+        11,
+        1
+      ],
+      [
+        0,
+        2,
+        9
+      ]
+    ]
+  }
+}
